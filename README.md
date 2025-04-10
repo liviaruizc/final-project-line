@@ -103,3 +103,95 @@ Here are some useful resources if you want to learn more about CMake:
 ## License
 
 The source code is dual licensed under Public Domain and MIT -- choose whichever you prefer.
+
+# Line Drawing and Calculation Program
+
+## Overview
+This C++ program calculates and visualizes a line defined by two points provided by the user. The program offers different methods to calculate properties of the line, such as slope, y-intercept, distance, and angle. Additionally, it allows drawing the line on a graphical window using the SFML (Simple and Fast Multimedia Library) graphics library.
+
+## Features
+- **Two-point method**: Allows the user to input two points and calculate the line properties.
+- **Point-slope method**: Allows the user to input a point and a slope to calculate the line's equation.
+- **Print line properties**: Prints the slope, y-intercept, distance between points, and angle of the line.
+- **Draw line**: Visualizes the line using SFML in a graphical window.
+
+## Program Flow
+1. **Two-point method**: The user enters two points, and the program calculates the slope and other properties.
+2. **Point-slope method**: The user enters a point and the slope to determine the line's equation.
+3. **Print line**: Prints the slope, y-intercept, distance between the points, and angle of the line.
+4. **Draw line**: Displays the line on a graphical window using SFML.
+
+## Code Structure
+The project contains the following main files:
+
+### `Line.h`:
+Defines the `Line` class, which handles the calculation and drawing of lines. It includes member functions to:
+- Calculate the slope of the line.
+- Calculate the y-intercept, distance, and angle.
+- Draw the line on an SFML window.
+
+### `Line.cpp`:
+Implements the methods defined in `Line.h`. Contains constructors and functions for creating lines and calculating various properties.
+
+### `project.h`:
+Contains global constants, data structures (such as `Point`), and an enumeration for menu options.
+
+### `line_project.cpp`:
+Contains the main program logic, user interaction, and a menu for selecting line operations. This is where the user inputs data, and different operations are performed based on the user's choices.
+
+### `SFML/Graphics.hpp`:
+The program uses SFML for rendering the graphical window and drawing the line.
+
+## Installation
+
+### Requirements
+- **SFML**: Ensure you have the SFML library installed on your system.
+- A C++ compiler (e.g., `g++` or `clang++`).
+
+### Compilation
+1. Save all the source files in your project directory.
+2. Install SFML and link it to your project.
+3. Compile the program using a C++ compiler:
+   ```bash
+   g++ -o line_project line_project.cpp -lsfml-graphics -lsfml-window -lsfml-system
+
+## Running the Program
+Upon running the program, a menu will appear asking the user to choose an option:
+
+Two-point method: Enter two points to define the line.
+
+Point-slope method: Enter a point and slope to define the line.
+
+Print line: Print the line properties.
+
+Draw line: Visualize the line in an SFML window.
+
+Exit: Exit the program.
+
+## Sample Output
+Menu Options:
+
+Type 1, 2, 3, 4 or 5 to pick one of the options:
+1 - Two-point method
+2 - Point-slope method
+3 - Print line
+4 - Draw line
+5 - Exit
+Choice: 1
+Enter x: 10
+Enter y: 20
+Enter x: 30
+Enter y: 40
+Slope: 1
+Y-Intercept: 10
+Distance of points: 28.2843
+Angle of line: 0.785398
+Graphical Window:
+When the user selects the Draw line option, an SFML window will open and display the line calculated based on the chosen method.
+
+## Dependencies
+SFML (Simple and Fast Multimedia Library): Required for graphical rendering.
+
+Install SFML from here.
+
+Link the SFML libraries (sfml-graphics, sfml-window, sfml-system) during compilation.
